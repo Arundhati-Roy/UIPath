@@ -3491,8 +3491,8 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "Bookswagon2",
-      "projectName": "Bookswagon2",
+      "projectUniqueName": "Flipkart",
+      "projectName": "Flipkart",
       "projectPath": "C:\\Users\\priyadarshini roy\\Documents\\UiPath\\Bookswagon2\\.local",
       "packagesPath": "C:\\Users\\priyadarshini roy\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\priyadarshini roy\\Documents\\UiPath\\Bookswagon2\\.local"

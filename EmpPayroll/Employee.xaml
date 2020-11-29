@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Employee" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1410.4,2204" sap2010:WorkflowViewState.IdRef="Employee_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Employee" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1100.8,2032.8" sap2010:WorkflowViewState.IdRef="Employee_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
       <x:String>System.Activities</x:String>
@@ -70,7 +70,7 @@
       <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Employee" sap:VirtualizedContainerService.HintSize="919.2,2039.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Employee" sap:VirtualizedContainerService.HintSize="919.2,1868" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="Conn" />
       <Variable x:TypeArguments="sd:DataTable" Name="EmpData" />
@@ -84,13 +84,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="877.6,1946.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\priyadarshini roy\Desktop\Book 6.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="877.6,1775.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Users\priyadarshini roy\Desktop\Book 6.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="844,1836.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="844,1665.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -103,7 +103,7 @@
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <ui:DatabaseConnect DatabaseConnection="[Conn]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="802.4,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=(LocalDb)\RoyDB;Initial Catalog=Employee;Integrated Security=True" />
+            <ui:DatabaseConnect DatabaseConnection="[Conn]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="802.4,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=(LocalDB)\RoyDB;Initial Catalog=UIPathDB;Integrated Security=True" />
             <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" ExistingDbConnection="[Conn]" sap:VirtualizedContainerService.HintSize="802.4,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="delete from [UIPathDB].[dbo].[Employee]">
               <ui:ExecuteQuery.Parameters>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -115,16 +115,17 @@
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
               </ui:ExecuteQuery.Parameters>
             </ui:ExecuteQuery>
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[EmpData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="802.4,1128.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[EmpData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="802.4,957.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="752.8,980" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="752.8,808.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="emailsender" />
-                      <Variable x:TypeArguments="x:String" Name="password" />
+                      <Variable x:TypeArguments="ss:SecureString" Name="password" />
+                      <Variable x:TypeArguments="x:String" Name="pass2" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -169,26 +170,15 @@
                         </scg:List>
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="711.2,256" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                      <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="241.6,177.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:SetCredential TimeoutMS="{x:Null}" CredentialName="Email Cred" DisplayName="Set Credential" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="SetCredential_1" Password="Mummy@0207" UserName="arundhati.roy1998@gmail.com" />
-                          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Email Cred" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[emailsender]" />
-                        </Sequence>
-                      </ui:CommentOut.Body>
-                    </ui:CommentOut>
-                    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="711.2,22.4" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8SJbndNsik2p1EzV2ditJQAAAAACAAAAAAAQZgAAAAEAACAAAADciEktJ17l1LwH3nDvQ5si4/hinm0py5vXz5SN10coRwAAAAAOgAAAAAIAACAAAABonk6r/EXYh29tioMYJAnyoKHMTuR690SlWUl4a/IEiRAAAAALbDkXpCL9Kzv69kEYWIl5QAAAAC6VkPvRAnxMxMd2jIFgzpt2rW07isyfYIO6JI+4QAFotsm6khYctodcDmN/l+BMyNPCDEFibAXNzrAszBqxANU=" Result="[password]" />
+                    <ui:SetCredential TimeoutMS="{x:Null}" CredentialName="Email Cred" DisplayName="Set Credential" sap:VirtualizedContainerService.HintSize="711.2,22.4" sap2010:WorkflowViewState.IdRef="SetCredential_1" Password="Mummy@0207" UserName="arundhati.roy1998@gmail.com" />
+                    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Email Cred" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="711.2,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[emailsender]" />
+                    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="711.2,22.4" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8SJbndNsik2p1EzV2ditJQAAAAACAAAAAAAQZgAAAAEAACAAAADciEktJ17l1LwH3nDvQ5si4/hinm0py5vXz5SN10coRwAAAAAOgAAAAAIAACAAAABonk6r/EXYh29tioMYJAnyoKHMTuR690SlWUl4a/IEiRAAAAALbDkXpCL9Kzv69kEYWIl5QAAAAC6VkPvRAnxMxMd2jIFgzpt2rW07isyfYIO6JI+4QAFotsm6khYctodcDmN/l+BMyNPCDEFibAXNzrAszBqxANU=" Result="[pass2]" />
                     <If Condition="[Status&lt;&gt;&quot;Active&quot;]" sap:VirtualizedContainerService.HintSize="711.2,296" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
                         <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[Name+&quot;is not active&quot;]" />
                       </If.Then>
                       <If.Else>
-                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="UIPath Mail Sent" DisplayName="Send SMTP Mail Message" Email="[emailsender]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[password.ToString]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="UIPath Mail Sent" To="[Email]">
+                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="UIPath Mail Sent" DisplayName="Send SMTP Mail Message" Email="[emailsender]" EnableSSL="True" From="arundhati.roy1998@gmail.com" sap:VirtualizedContainerService.HintSize="333.6,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[password.ToString]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="UIPath Mail Sent" To="[Email]">
                           <ui:SendMail.Files>
                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                               <InArgument x:TypeArguments="x:String">[Path]</InArgument>
